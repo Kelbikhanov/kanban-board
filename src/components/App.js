@@ -1,13 +1,32 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TrelloList from './TrelloList/TrelloList';
+import { connect } from 'react-redux'
 
-function App() {
+import styles from './App.scss'
+
+class App extends Component {
+  render() {
+  const {lists} = this.props;
   return (
-    <div>
-      <h2>ghbdtn</h2>
-      <TrelloList/>
+      <div className="app">
+      <div className="title">
+        <a>This Canban Board App</a>
+      </div>
+      <div className="container-list">
+      {lists.map(list => (<TrelloList
+        key={list.id}
+        title={list.title}
+        cards={list.cards}/>
+      ))}
+      </div>
     </div>
+    
   );
 }
+}
 
-export default App;
+const mapStateToProps = state => ({
+  lists: state.lists
+});
+
+export default connect (mapStateToProps) (App);

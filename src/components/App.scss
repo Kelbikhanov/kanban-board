@@ -1,0 +1,26 @@
+body {
+    background: rgb(3,119,192);
+    background: linear-gradient(227deg, rgba(3,119,192,1) 0%, rgba(64,106,197,1) 100%);
+}
+
+.app {
+    width: 1140px;
+    margin: 0 auto;
+    .title{
+        margin-bottom: 20px;
+        margin-top: 30px;
+        a {
+            background-color: #6D8EA2;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: Roboto;
+            font-weight: 400;
+            padding: 10px 5px;
+        }
+    }
+    
+    .container-list {
+        display: flex;
+        flex-direction: row;
+    }
+}
