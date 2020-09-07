@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TrelloList from './TrelloList/TrelloList';
 import { connect } from 'react-redux'
+import TrelloActionButton from '../components/TrelloActoionButton/TrelloActionButton'
 
 import styles from './App.scss'
 
@@ -18,6 +19,7 @@ class App extends Component {
         title={list.title}
         cards={list.cards}/>
       ))}
+      <TrelloActionButton list/>
       </div>
     </div>
     

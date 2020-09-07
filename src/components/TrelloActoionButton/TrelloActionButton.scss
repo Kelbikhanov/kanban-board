@@ -7,3 +7,30 @@
     width: 272px;
     padding-left: 10px;
 }
+
+.card {
+    overflow: visible;
+    min-height: 80px;
+    min-width: 272px;
+    padding: 6px 8px 2px;
+    .textarea {
+        resize: none;
+        width: 100%;
+        outline: none;
+        border: none;
+    }
+}
+.btn-group {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    .btn-card {
+        color: #fff;
+        background-color: #5aac44;
+    }
+    .close {
+        margin-left: 8px;
+        cursor: pointer;
+    }
+}
+
