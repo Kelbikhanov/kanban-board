@@ -3,7 +3,7 @@ import style from './TrelloList.scss'
 import TrelloCard from '../TrelloCard/TrelloCard'
 import TrelloActionButton from '../TrelloActoionButton/TrelloActionButton'
 
-const TrelloList = ({ title, cards}) => {
+const TrelloList = ({ title, cards, listID}) => {
     return (
         <div className="container">
             <h4>{title}</h4>
@@ -11,7 +11,7 @@ const TrelloList = ({ title, cards}) => {
              key={card.id}
              text={card.text} />
 ))}
-<TrelloActionButton/>
+<TrelloActionButton listID={listID}/>
         </div>
     );
 };
