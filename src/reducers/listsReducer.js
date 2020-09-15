@@ -72,6 +72,7 @@ const listsReducer = (state = initialState, action) => {
                 });
 
                 return newState;
+                
             }
 
                 case CONSTANTS.DRAG_HAPPENED: 
@@ -79,16 +80,18 @@ const listsReducer = (state = initialState, action) => {
                     const {
                         droppableIdStart,
                         droppableIdEnd,
-                        droppableIndexStart,
                         droppableIndexEnd,
-                        draggableId
+                        droppableIndexStart,
+                        //draggableId
                     } = action.payload;
+
                     const newState = [...state];
-                    if(draggableId === droppableIdEnd) {
+
+                    if (droppableIdStart === droppableIdEnd) {
                         const list = state.find(list => droppableIdStart === list.id);
-                        const card = list.cards.splice(droppableIndexStart, 1)
-                                     list.cards.splice(droppableIndexEnd, 0, ...card)
-                    }
+                        const card = list.cards.splice(droppableIndexStart, 1);
+                        list.cards.splice(droppableIndexEnd, 0, ...card);
+                      }
 
                     return newState;
 
