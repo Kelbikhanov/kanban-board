@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    .logo {
+        font-family: 'Indie Flower', cursive;
+        font-size: 40px;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    nav {
+        
+        .nav__links {
+            display: flex;
+            justify-content: space-between;
+            li {
+                padding: 15px;
+                list-style-type: none;
+                a {
+                    color: #fff;
+                    font-size: 14px;
+                    font-family: Roboto;
+                    font-weight: 400;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+    .header__login {
+        .sign_in {
+            position: relative;
+            color: #fff;
+            font-size: 18px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-decoration: none;
+            padding-right: 10px;
+            &:hover {
+                text-decoration: underline;
+                opacity: .7;
+            }
+        }
+
+        .sign_up {
+            position: relative;
+            color: #fff;
+            font-size: 18px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-decoration: none;
+            padding-right: 10px;
+            
+            border: 1px #fff solid;
+            border-radius: 5px;
+            padding: 10px;
+            &:hover {
+                color: #333;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #fff;
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(232, 241, 252), rgb(209, 228, 249), rgb(185, 214, 246), rgb(162, 200, 243), rgb(139, 186, 240), rgb(116, 173, 237), rgb(93, 159, 234), rgb(70, 145, 231), rgb(46, 131, 228), rgb(23, 118, 225), rgb(0, 104, 222));
+}

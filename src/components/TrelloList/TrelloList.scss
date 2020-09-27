@@ -10,5 +10,9 @@
         font-size: 15px;
         font-weight: 500;
         text-transform: uppercase;
-    }
+        padding: 10px 5px;
+    } 
+}
+.MuiCardContent-root:last-child {
+    padding-bottom: 0;
 }

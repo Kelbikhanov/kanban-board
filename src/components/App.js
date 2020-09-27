@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 import TrelloList from './TrelloList/TrelloList';
 import { connect } from 'react-redux'
 import TrelloActionButton from '../components/TrelloActoionButton/TrelloActionButton'
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { sort } from '../action'
 
 import styles from './App.scss'
+import Header from './Header/Header';
 
 class App extends Component {
   onDragEnd = (result) => {
-    const {destination, source, draggableId} = result;
+    const {destination, source, draggableId, type} = result;
 
     if(!destination) {
       return;
@@ -20,7 +21,8 @@ class App extends Component {
       destination.droppableId,
       source.index,
       destination.index,
-      draggableId
+      draggableId,
+      type
     )
     );
   };
@@ -28,21 +30,29 @@ class App extends Component {
   render() {
   const {lists} = this.props;
   return (
+    
     <DragDropContext onDragEnd={this.onDragEnd}>
+      
       <div className="app">
+      <Header/>
       <div className="title">
-        <a>This Canban Board App</a>
+        <a>Задачи</a>
       </div>
-      <div className="container-list">
-      {lists.map(list => (
-      <TrelloList
-        listID={list.id}
-        key={list.id}
-        title={list.title}
-        cards={list.cards}/>
-      ))}
-      <TrelloActionButton list/>
-      </div>
+      <Droppable droppableId="all-lists" direction="horizontal" type="list">
+        {provided => (
+          <div className="container-list" {...provided.droppableProps} ref ={provided.innerRef}>
+          {lists.map((list, index) => (
+          <TrelloList
+            listID={list.id}
+            key={list.id}
+            title={list.title}
+            cards={list.cards}
+            index={index}/>
+          ))}
+          <TrelloActionButton list/>
+          </div>
+        )}
+      </Droppable>
     </div>
     </DragDropContext>
   );
